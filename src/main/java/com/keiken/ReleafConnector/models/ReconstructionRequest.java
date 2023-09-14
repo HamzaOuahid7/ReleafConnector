@@ -17,10 +17,8 @@ import java.util.List;
 public class ReconstructionRequest {
     @Id
     private Long reconstructionId;
-    private List<Blob> damagePhotos;
     private String damageDescription;
     private String citizenFullName;
-    private Blob citizenIdentityPicture;
     private String cin;
     private Date birthday;
     private String address;
