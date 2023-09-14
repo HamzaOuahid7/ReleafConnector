@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.sql.Blob;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -18,9 +19,11 @@ public class ReconstructionRequest {
     private Long reconstructionId;
     private List<Blob> damagePhotos;
     private String damageDescription;
-    @OneToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "citizen_id", referencedColumnName = "citizenId")
-    private Citizen citizen;
+    private String citizenFullName;
+    private Blob citizenIdentityPicture;
+    private String cin;
+    private Date birthday;
+    private String address;
     private String status;
     @OneToMany(mappedBy = "reconstructionRequest", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Donation> donations;
